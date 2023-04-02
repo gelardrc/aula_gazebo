@@ -1,7 +1,5 @@
 # Aula de gazebo - 2023
 
-________________________________________________________________________________________________
-
 ## Descrição :  
  
 Esse pacote tem o intuito de auxiliar as aulas de Gazebo/Ros do ano de 2023
