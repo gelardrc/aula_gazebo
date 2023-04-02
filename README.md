@@ -8,7 +8,7 @@ Esse pacote tem o intuito de auxiliar as aulas de Gazebo/Ros do ano de 2023
 
 Para instalar o pacote execute o comando do git clone no seu Workspace :
 
-> git clone 
+> git clone https://github.com/gelardrc/aula_gazebo.git
 
 Agora copie e cole o arquivo aula_setup.bash para a pasta sua_workspace/devel (isso pode ser feito por meio do navegador de arquivos do ubuntu ou pelo comando mv no terminal).
 
