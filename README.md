@@ -16,6 +16,9 @@ Para instalar o pacote execute o comando do git clone no seu Workspace :
 > 
 > catkin_make
 
+resultado esperado : 
+
+![image](https://drive.google.com/uc?export=view&id=1HBmUMmLUaIsdPd3a1qtdkE1yonNBCkRr)
 
 Agora copie e cole o arquivo aula_setup.bash para a pasta sua_workspace/devel (isso pode ser feito por meio do navegador de arquivos do ubuntu ou pelo comando mv no terminal).
 
