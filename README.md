@@ -1,11 +1,14 @@
-# aula_gazebo
-Aula de gazebo - 2023
+# Aula de gazebo - 2023
 
-Descrição :  Esse pacote tem o ituito de auxiliar as aulas de Gazebo/Ros do ano de 2023
+## Descrição :  
+ 
+ Esse pacote tem o ituito de auxiliar as aulas de Gazebo/Ros do ano de 2023
 
 ________________________________________________________________________________________________
 
-Como instalar : Para instalar o pacote execute o comando do git clone no seu Workspace 
+## Como instalar : 
+
+Para instalar o pacote execute o comando do git clone no seu Workspace 
 
 > git clone 
 
@@ -24,9 +27,8 @@ Todas as vezes que abrir uma nova aba no terminal voce tera que executar o segui
 _________________________________________________________________________________________________
 
 
-Testando o pacote : 
+## Testando o pacote : 
 
 Após realizar o source devel/aula_setup.bash utilize o roslaunch para iniciar uma simulação de mundo
-
 
 > roslaunch aula_gazebo  
