@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<robot name="self_balance" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <material name="branco">
+    <color rgba="1 1 1 1"/>
+  </material>
+  
+  <material name="azul">
+    <color rgba="0 0 1 1"/>
+  </material>
+
+  <material name="preto">
+    <color rgba="0 0 0 0.5"/>
+  </material>
+
+  <material name="cinza">
+    <color rgba="0.3 0.3 0.3 1"/>
+  </material>
+
+  <material name="amarelo">
+    <color rgba="0.8 0.8 0.0 1.0"/>
+  </material>
+
+  <!-- base link-->
+  
+  <link name="base_link">
+  
+  </link>
+  
+  <!--primeira base-->
+  
+  <joint name="primeira_origem" type="fixed">
+  
+    <parent link="base_link"/>
+  
+    <child link="primeira_base"/>
+  
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.065"/>
+  
+  </joint>
+  
+  <link name="primeira_base">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.07 0.18 0.005"/>
+      </geometry>
+      <material name="branco" />
+    </visual>
+  </link>
+
+
+ 
+<!-- segunda base -->
+
+   <joint name="segunda_base_joint" type="fixed">
+  
+    <parent link="base_link"/>
+  
+    <child link="segunda_base"/>
+
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.13"/>
+  
+  </joint>
+  
+  <link name="segunda_base">
+    <visual>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.07 0.18 0.005"/>
+        </geometry>
+        <material name="branco"/>
+    </visual>
+  </link>
+  
+  <!-- Terceira Base -->
+
+  <joint name="terceira_base_joint" type="fixed">
+  
+    <parent link="base_link"/>
+    <child link="terceira_base"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.195"/>
+
+  
+  </joint>
+  <link name="terceira_base">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.065 0.18 0.005"/>
+      </geometry>
+      <material name="branco"/>
+    </visual>
+  </link>
+
+  <!-- hastes direita frontal -->
+
+  <joint name="haste_direita_f_joint" type="fixed">
+  
+    <parent link="base_link"/>
+    <child link="haste_direita_f"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.025 0.07 0.13"/>
+  
+  </joint>
+
+  <link name="haste_direita_f">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.0025" length="0.12"/>
+      </geometry>
+      <material name="cinza"/>
+    </visual>
+  </link>
+
+<!-- haste direita inferior -->
+
+  <joint name="haste_direita_i_joint" type="fixed">
+  
+    <parent link="base_link"/>
+    <child link="haste_direita_i"/>
+    <origin rpy="0.0 0.0 0.0" xyz="-0.025 0.07 0.13"/>
+  
+  </joint>
+
+  <link name="haste_direita_i">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.0025" length="0.12"/>
+      </geometry>
+      <material name="cinza"/>
+    </visual>
+  </link>
+
+<!-- haste esquerda frente -->
+
+  <joint name="haste_esquerda_f_joint" type="fixed">
+  
+    <parent link="base_link"/>
+    <child link="haste_esquerda_f"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.025 -0.07 0.13"/>
+  
+  </joint>
+
+  <link name="haste_esquerda_f">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.0025" length="0.12"/>
+      </geometry>
+      <material name="cinza"/>
+    </visual>
+  </link>
+
+<!-- haste esquerda inferior -->
+
+  <joint name="haste_esquerda_i_joint" type="fixed">
+  
+    <parent link="base_link"/>
+    <child link="haste_esquerda_i"/>
+    <origin rpy="0.0 0.0 0.0" xyz="-0.025 -0.07 0.13"/>
+  
+  </joint>
+
+  <link name="haste_esquerda_i">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.0025" length="0.12"/>
+      </geometry>
+      <material name="cinza"/>
+    </visual>
+  </link>
+
+<!-- motor esquerdo -->
+
+  <joint name="motor_e_joint" type="fixed">
+  
+    <parent link="base_link"/>
+    <child link="motor_esquerdo"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0 -0.10 0.065"/>
+  
+  </joint>
+
+  <link name="motor_esquerdo">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.025 0.02 0.065"/>
+      </geometry>
+      <material name="amarelo"/>
+    </visual>
+  </link>
+
+<!-- motor direito -->
+
+  <joint name="motor_d_joint" type="fixed">
+  
+    <parent link="base_link"/>
+    <child link="motor_direito"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0 0.10 0.065"/>
+  
+  </joint>
+
+  <link name="motor_direito">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.025 0.02 0.065"/>
+      </geometry>
+      <material name="amarelo"/>
+    </visual>
+  </link>
+
+
+  <!-- roda esquerda -->
+
+  <joint name="roda_e_joint" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="base_link"/>
+    <child link="roda_esquerda"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0 -0.125 0.03"/>
+  
+  </joint>
+
+  <link name="roda_esquerda">
+    <visual>
+      <origin rpy="1.5714 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.025"/>
+      </geometry>
+      <material name="preto"/>
+    </visual>
+  </link>
+
+  <!-- roda direita -->
+
+  <joint name="roda_d_joint" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="base_link"/>
+    <child link="roda_direita"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0 0.125 0.03"/>
+  
+  </joint>
+
+  <link name="roda_direita">
+    <visual>
+      <origin rpy="1.5714 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.025"/>
+      </geometry>
+      <material name="preto"/>
+    </visual>
+  </link>
+
+  <!--teste-->
+
+  <joint name="teste_roda_joint" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="roda_esquerda"/>
+    <child link="teste"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0 0.125 0.03"/>
+  
+  </joint>
+ 
+ <link name="teste">
+    <visual>
+      <origin rpy="1.5714 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.010 0.010 0.010"/>
+      </geometry>
+      <material name="amarelo"/>
+    </visual>
+  </link>
+ 
+</robot>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot name="teste" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="tamanho_x" value="0.20" />
+    <xacro:property name="tamanho_y" value="0.30" />
+    <xacro:property name="tamanho_z" value="0.15" />
+
+    <material name="blue">
+      <color rgba="0 0 1 1"/>
+    </material>
+
+    <material name="black">
+      <color rgba="0 0 0 1"/>
+    </material>
+
+    <material name="white">
+      <color rgba="1 1 1 1"/>
+    </material>
+
+    <material name="red">
+      <color rgba="1 0 0 1"/>
+    </material>
+
+
+    <!-- base link -->
+    <link name="base_link">
+      
+    </link>
+
+    <!-- corpo -->
+
+    <joint name="corpo_joint" type="fixed">
+      <origin xyz="-${tamanho_x/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <parent link="base_link"/>
+      <child link="corpo_link"/>
+    </joint>
+
+    <link name="corpo_link">
+        <visual>
+          <geometry>
+              <box size="${tamanho_x} ${tamanho_y} ${tamanho_z}"/>
+          </geometry>
+          <material name="red"/>
+        </visual>
+        <collision>
+          <geometry>
+              <box size="${tamanho_x} ${tamanho_y} ${tamanho_z}"/>
+          </geometry>
+        </collision>
+    </link>
+
+</robot>

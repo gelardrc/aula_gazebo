@@ -7,9 +7,6 @@
   <xacro:property name="tamanho_y" value="0.30" />
   <xacro:property name="tamanho_z" value="0.15" />
 
-
-
-
   <material name="blue">
     <color rgba="0 0 1 1"/>
   </material>
