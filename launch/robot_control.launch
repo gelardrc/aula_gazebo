@@ -31,7 +31,9 @@
         args="-x $(arg x) -y $(arg y) -z $(arg z) -urdf -model robot -param robot_description" respawn="false" output="screen" />
 
   <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="10.0" />
+    <param name="publish_frequency" type="double" value="30.0" />
   </node>
+
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard" name="teleop" />
 
 </launch>

@@ -54,8 +54,27 @@
       </xacro:inertial_box>
   </link>
 
+  <gazebo reference="corpo_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
 
   <!-- roda esquerda -->
+  <joint name="debug_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="roda_esquerda_link"/>
+    <child link="debug_box"/>
+  </joint>
+
+  <link name="debug_box">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
 
   <joint name="roda_esquerda_joint" type="continuous">
     
@@ -86,8 +105,25 @@
     </xacro:inertial_cylinder>
   </link>
 
+  <gazebo reference="roda_esquerda_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
 
   <!-- roda direita -->
+  <joint name="debug_direita_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="roda_direita_link"/>
+    <child link="debug_box_2"/>
+  </joint>
+
+  <link name="debug_box_2">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
 
   <joint name="roda_direita_joint" type="continuous">
     
@@ -97,7 +133,7 @@
     
     <origin xyz="-${tamanho_x/2+0.05} -${tamanho_y/2} -${tamanho_z/2}" rpy="${pi/2} 0.0 0.0"/>
 
-    <axis xyz="0.0 0.0 1.0"/>
+    <axis xyz="0.0 0.0 -1.0"/>
   </joint>
 
   <link name="roda_direita_link">
@@ -116,6 +152,10 @@
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     </xacro:inertial_cylinder>
   </link>
+
+  <gazebo reference="roda_direita_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
 
 
   <!-- bolinha -->
@@ -143,5 +183,13 @@
     </xacro:inertial_sphere>
 
   </link>
+
+  <gazebo reference="bolinha_link">
+    <material>Gazebo/Black</material>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+  </gazebo>
+
+
 
 </robot>
