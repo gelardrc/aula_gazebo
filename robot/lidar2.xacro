@@ -48,7 +48,7 @@
                 <frameName>laser_frame</frameName>
             </plugin>
             <update_rate>10</update_rate>
-            <visualize>true</visualize>
+            <visualize>false</visualize>
         </sensor>
     </gazebo>
 
