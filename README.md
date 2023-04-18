@@ -28,7 +28,7 @@ Agora copie e cole o arquivo aula_setup.bash para a pasta sua_workspace/devel (i
 
 Todas às vezes que abrir uma nova aba no terminal você tera que executar o seguinte comando: 
 
-> source sua_work_space/devel/aula_setup.bash
+> source sua_work_space/devel/setup.bash
 
 **Esse comando garante que o ROS e o Gazebo estarão com as variáveis de ambiente corretas.**
 
