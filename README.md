@@ -37,6 +37,6 @@ ________________________________________________________________________________
 
 ## Testando o pacote : 
 
-Após realizar o source devel/aula_setup.bash utilize o roslaunch para iniciar uma simulação de mundo.
+Após realizar o source devel/setup.bash utilize o roslaunch para iniciar uma simulação de mundo.
 
 > roslaunch aula_gazebo robot_gazebo.launch 
