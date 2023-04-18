@@ -39,4 +39,4 @@ ________________________________________________________________________________
 
 Após realizar o source devel/aula_setup.bash utilize o roslaunch para iniciar uma simulação de mundo.
 
-> roslaunch aula_gazebo  
+> roslaunch aula_gazebo robot_gazebo.launch 
