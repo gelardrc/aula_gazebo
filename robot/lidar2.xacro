@@ -32,7 +32,7 @@
             <ray>
                 <scan>
                   <horizontal>
-                      <samples>360</samples>
+                      <samples>720</samples>
                       <resolution>1</resolution>
                       <min_angle>-${pi}</min_angle>
                       <max_angle>${pi}</max_angle>
@@ -40,7 +40,7 @@
                 </scan>
                 <range>
                   <min>0.06</min> <!-- do not change: use min_distance (below) for realistic behavior (smaller values cause issues) -->
-                  <max>10</max>   <!-- do not change: use min_distance (below) for realistic behavior (bigger values cause issues) -->
+                  <max>30</max>   <!-- do not change: use min_distance (below) for realistic behavior (bigger values cause issues) -->
                 </range>
             </ray>
             <plugin name="laser_gazebo" filename="libgazebo_ros_laser.so">

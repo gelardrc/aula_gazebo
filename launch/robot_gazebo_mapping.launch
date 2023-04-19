@@ -1,0 +1,54 @@
+<launch>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="world" default="$(find aula_gazebo)/worlds/aws.world"/>
+
+  <arg name="robot" default="$(find aula_gazebo)/robot/robot.urdf.xacro"/>
+  <arg name="z" default="0.15"/>
+  <arg name="y" default="6.5"/>
+  <arg name="x" default="7.5"/>
+
+  <arg name="rvizconfig" default="$(find aula_gazebo)/rviz/aws.rviz" />
+
+
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="world_name" value="$(arg world)" />
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg robot)" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+        args="-x $(arg x) -y $(arg y) -z $(arg z) -urdf -model robot -param robot_description" respawn="false" output="screen" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="10.0" />
+  </node>
+
+  <!--mapping node-->
+  <node pkg="gmapping" type="slam_gmapping" name="create_map">
+    <param name="xmin" value="0"/>
+    <param name="ymin" value="0"/>
+    <param name="xmax" value="14"/>
+    <param name="ymax" value="21"/>
+    <param name="maxRange" value="6.0"/> 
+  </node>
+
+  <!--RVIZ NODE-->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" /> 
+
+
+</launch>
