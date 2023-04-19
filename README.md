@@ -20,11 +20,14 @@ resultado esperado :
 
 ![image](https://drive.google.com/uc?export=view&id=1HBmUMmLUaIsdPd3a1qtdkE1yonNBCkRr)
 
-Agora copie e cole o arquivo aula_setup.bash para a pasta sua_workspace/devel (isso pode ser feito por meio do navegador de arquivos do ubuntu ou pelo comando mv no terminal).
+Agora copie e cole os arquivos da pasta model para a pasta .gazebo/models (isso pode ser feito por meio do navegador de arquivos do ubuntu ou pelo comando mv no terminal).
 
 **(o comando deve ser realizado dentro da pasta aula_gazebo)**
 
-> mv aula_setup.bash ../../devel/
+> mv models/* ~/.gazebo/models
+
+**obs:** Para vizualizar pastas que comecem com .<nome_da_pasta> (ocultas) no linux, vá ate o local da pasta e clique em crtl+h. Caso a pasta models nao exista dentro de .gazebo, basta você cria-la.
+
 
 Todas às vezes que abrir uma nova aba no terminal você tera que executar o seguinte comando: 
 
