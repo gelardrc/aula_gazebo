@@ -6,6 +6,6 @@
     <!-- <xacro:include filename="camera2.xacro"/> -->
     <!-- <xacro:include filename="depth_camera.xacro"/> -->
 
-    <!--<xacro:include filename="lidar2.xacro"/>-->
+    <xacro:include filename="lidar2.xacro"/>
     <!--<xacro:include filename="kinetic.xacro"/>-->
 </robot>
